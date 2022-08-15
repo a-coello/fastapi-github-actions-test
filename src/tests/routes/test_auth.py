@@ -29,7 +29,8 @@ def test_login(client: TestClient):
     assert "access_token" in response_data
     assert len(response_data["access_token"])
 
-#Test the user login endpoint - POST /api/v1/auth/login
+
+# Test the user login endpoint - POST /api/v1/auth/login
 def test_login3(client: TestClient):
     data = {"email": "buhari@gmail.com", "password": "Password1"}
     response = client.post("/api/v1/auth/login3", json=data)
