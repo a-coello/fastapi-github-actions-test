@@ -19,3 +19,7 @@ def register(user_data: UserRegisterSchema, db: Session = Depends(get_db)):
 @router.post("/auth/login", response_model=dict)
 def login(user_data: UserLoginSchema, db: Session = Depends(get_db)):
     return auth_controller.create_access_token(db, user_data.email, user_data.password)
+
+@router.post("/auth/login2", response_model=dict)
+def login2(user_data: UserLoginSchema, db: Session = Depends(get_db)):
+    return auth_controller.create_access_token(db, user_data.email, user_data.password)
