@@ -22,5 +22,5 @@ def login(user_data: UserLoginSchema, db: Session = Depends(get_db)):
 
 
 @router.post("/auth/login3", response_model=dict)
-def login2(user_data: UserLoginSchema, db: Session = Depends(get_db)):
+def login3(user_data: UserLoginSchema, db: Session = Depends(get_db)):
     return auth_controller.create_access_token(db, user_data.email, user_data.password)
